@@ -6,6 +6,7 @@ import Recipe.API.Recipe.API.service.NoSuchRecipeException;
 import Recipe.API.Recipe.API.service.NoSuchReviewException;
 import Recipe.API.Recipe.API.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,4 +78,16 @@ public class ReviewController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @RequestMapping(value = "/rating/{id}", method = RequestMethod.POST)
+    public ResponseEntity<?> inputRating(@PathVariable("id") long id, @RequestParam("rating") int rating) {
+        if (rating < 0 || rating > 10) {
+            return new ResponseEntity<>("Invalid rating. Please enter a number between 0 and 10.", HttpStatus.BAD_REQUEST);
+        }
+
+        // TODO: insert the rating into the database or perform any other necessary operation
+
+        return new ResponseEntity<>("Rating successfully inputted.", HttpStatus.OK);
+    }
+
 }

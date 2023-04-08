@@ -76,4 +76,11 @@ public class ReviewService {
         reviewRepo.save(reviewToUpdate);
         return reviewToUpdate;
     }
+
+//    public Review inputRating(int rating) throws NoSuchReviewException {
+//        Recipe recipe = recipeService.getRecipeById(recipeId);
+//        recipe.getReviews().add(rating);
+//        recipeService.updateRecipe(recipe, false);
+//        return recipe;
+//    }
 }
