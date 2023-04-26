@@ -1,4 +1,4 @@
-package Recipe.API.Recipe.API.test;
+package Recipe.API.Recipe.API;
 
 import Recipe.API.Recipe.API.model.Ingredient;
 import Recipe.API.Recipe.API.model.Recipe;
@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Profile;
 
+import java.util.Set;
 
 
 @SpringBootApplication
@@ -37,7 +38,7 @@ public class RecipeMainTest implements CommandLineRunner {
                     .ingredients(Set.of(ingredient))
                     .steps(Set.of(step1, step2))
                     .reviews(Set.of(review))
-                    .username("bob")
+             //       .username("bob")
                     .build();
 
             recipeRepo.save(recipe1);
@@ -49,7 +50,7 @@ public class RecipeMainTest implements CommandLineRunner {
                     .name("another test recipe")
                     .difficultyRating(10)
                     .minutesToMake(2)
-                    .username("Sally")
+              //      .username("Sally")
                     .build();
             recipeRepo.save(recipe2);
 
@@ -59,7 +60,7 @@ public class RecipeMainTest implements CommandLineRunner {
                     .name("another another test recipe")
                     .difficultyRating(5)
                     .minutesToMake(2)
-                    .username("Mark")
+               //     .username("Mark")
                     .build();
 
             recipeRepo.save(recipe3);
@@ -76,7 +77,7 @@ public class RecipeMainTest implements CommandLineRunner {
                     .reviews(Set.of(
                             Review.builder().username("ben").rating(10).description("this stuff is so good").build()
                     ))
-                    .username("Billy")
+              //      .username("Billy")
                     .build();
 
             recipeRepo.save(recipe4);
